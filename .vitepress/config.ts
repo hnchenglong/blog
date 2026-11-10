@@ -2,8 +2,9 @@ import { defineConfig } from 'vitepress'
 import { genFeed } from './genFeed.js'
 
 export default defineConfig({
-  title: 'The Vue Point',
-  description: 'The official blog for the Vue.js project',
+  title: 'The Point',
+  base: '/blog/',
+  description: 'The blog',
   cleanUrls: true,
   head: [
     ['meta', { name: 'twitter:site', content: '@vuejs' }],

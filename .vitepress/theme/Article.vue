@@ -2,7 +2,7 @@
 import Date from './Date.vue'
 import Author from './Author.vue'
 import { computed } from 'vue'
-import { useData, useRoute } from 'vitepress'
+import { useData, useRoute, withBase } from 'vitepress'
 import { data as posts } from './posts.data.js'
 
 const { frontmatter: data } = useData()
@@ -10,7 +10,7 @@ const { frontmatter: data } = useData()
 const route = useRoute()
 
 function findCurrentIndex() {
-  return posts.findIndex((p) => p.url === route.path)
+  return posts.findIndex((p) => withBase(p.url) === route.path)
 }
 
 // use the customData date which contains pre-resolved date info
@@ -51,7 +51,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
             Next Article
           </h2>
           <div class="link">
-            <a :href="nextPost.url">{{ nextPost.title }}</a>
+            <a :href="withBase(nextPost.url)">{{ nextPost.title }}</a>
           </div>
         </div>
         <div v-if="prevPost" class="py-8">
@@ -61,11 +61,11 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
             Previous Article
           </h2>
           <div class="link">
-            <a :href="prevPost.url">{{ prevPost.title }}</a>
+            <a :href="withBase(prevPost.url)">{{ prevPost.title }}</a>
           </div>
         </div>
         <div class="pt-8">
-          <a class="link" href="/">← Back to the blog</a>
+          <a class="link" :href="withBase('/')">← Back to the blog</a>
         </div>
       </footer>
     </div>

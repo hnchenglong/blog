@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Date from './Date.vue'
 import { data as posts } from './posts.data.js'
-import { useData } from 'vitepress'
+import { withBase } from 'vitepress'
 
-const { frontmatter } = useData()
+// const { frontmatter } = useData()
 </script>
 
 <template>
@@ -27,9 +27,11 @@ const { frontmatter } = useData()
           <div class="space-y-5 xl:col-span-3">
             <div class="space-y-6">
               <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                <a class="text-gray-900 dark:text-white" :href="url">{{
-                  title
-                }}</a>
+                <a
+                  class="text-gray-900 dark:text-white"
+                  :href="withBase(url)"
+                  >{{ title }}</a
+                >
               </h2>
               <div
                 v-if="excerpt"
@@ -38,7 +40,9 @@ const { frontmatter } = useData()
               ></div>
             </div>
             <div class="text-base leading-6 font-medium">
-              <a class="link" aria-label="read more" :href="url">Read more →</a>
+              <a class="link" aria-label="read more" :href="withBase(url)"
+                >Read more →</a
+              >
             </div>
           </div>
         </article>

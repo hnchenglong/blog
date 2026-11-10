@@ -21,7 +21,7 @@ export default defineConfig({
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/logo.jpg'
+        href: '/blog/logo.jpg'
       }
     ],
     [

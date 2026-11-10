@@ -1,6 +1,6 @@
 ---
 title: Volar 1.0 "Nika" Released!
-date: 2022-10-10
+date: 2026-10-10
 author: Johnson Chu
 avatar: https://avatars.githubusercontent.com/u/16279759?v=4
 twitter: '@johnsoncodehk'
@@ -118,11 +118,11 @@ Thank you for reading this blog!
 
 ---
 
-很高興宣布在今天完成了所有主要功能並發佈了v1.0版本。🎉
+很高興宣布在今天完成了所有主要功能並發佈了 v1.0 版本。🎉
 
 這個主要版本全方面改進了工具，除了改進 UX、性能、包大小，我們還發佈了 Plugin API v1，以及重構了架構使核心代碼與框架無關。
 
-今年初我與 Vue 的作者 Evan 達成協議，他在 3 月開始資助我全職開發 Volar 直至完成 1.0 版本，經過7個月的努力我們終於做到了這個目標！
+今年初我與 Vue 的作者 Evan 達成協議，他在 3 月開始資助我全職開發 Volar 直至完成 1.0 版本，經過 7 個月的努力我們終於做到了這個目標！
 
 如果你沒有追蹤每個版本的 changelog，你可能不知道發生了什麼，我會簡單總結在這半年間對你較有明顯影響的更改：
 
@@ -132,12 +132,12 @@ Thank you for reading this blog!
 - 實現了 [Component Preview](https://github.com/johnsoncodehk/volar/discussions/1511)
 - 新增 `format.initialIndent` 設置以指定 SFC blocks 的初始縮進
 - 實現了 Web IDE 支持
-- 不再內置支持 `<template lang="pug">`（在v1.0需要安裝[@volar/vue-language-plugin-pug](https://www.npmjs.com/package/@volar/vue-language-plugin-pug)）
+- 不再內置支持 `<template lang="pug">`（在 v1.0 需要安裝[@volar/vue-language-plugin-pug](https://www.npmjs.com/package/@volar/vue-language-plugin-pug)）
 
 ### 開箱即用改進
 
 - 預設不再需要 `"jsx": "preserve"`，並且不會與 `@types/react` 衝突（除非明確啟用 `vueCompilerOptions.jsxTemplates`）
-- 預設總是以 `defineComponent()` 包裝Component Options
+- 預設總是以 `defineComponent()` 包裝 Component Options
 - 不再以警告色顯示未知 Component Tag
 - 改進 JS 組件中的 Template TypeScript 支持
 - 減少對閱讀 README 的依賴，現在會自動檢測常見的項目設置問題（例如錯誤地設置 `vueCompilerOptions.target`），發現問題時會在狀態欄提示
@@ -158,7 +158,7 @@ Thank you for reading this blog!
 - 支持 Find File References
 - 支持了 [JavaScript and TypeScript Nightly](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
 - 解決了無法在 Template 引用類型的問題
-- 新增 `vueCompilerOptions.strictTemplates` 選項支持更嚴格的Template type checking，在使用未知的Component Tag和Props時報告錯誤
+- 新增 `vueCompilerOptions.strictTemplates` 選項支持更嚴格的 Template type checking，在使用未知的 Component Tag 和 Props 時報告錯誤
 
 ### 性能改進
 
@@ -170,7 +170,7 @@ Thank you for reading this blog!
 - 移植了 tsserver 基於 Named Pipe 的 Cancellation Token 實現以解決了 LSP 請求阻塞
 - 優化 Bundle 降低包大小，並且插件啟動速度更快
 
-另外一些大型項目的性能問題可能是由於 tsconfig 包含了太多不需要的文件，我們還有一個新的[VSCode插件](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-tsconfig-helper)用來檢查你的tsconfig包含的文件。
+另外一些大型項目的性能問題可能是由於 tsconfig 包含了太多不需要的文件，我們還有一個新的[VSCode 插件](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-tsconfig-helper)用來檢查你的 tsconfig 包含的文件。
 
 ### 通用的 Language Server 框架
 
@@ -195,8 +195,8 @@ VueLanguagePlugin 的 codegen API 使用 `muggle-string` 而不是 `magic-string
 ### 外部工具支持
 
 - `@volar/vue-typescript` 為 `prettier-plugin-organize-imports` 公開了 organizeImports API
-- `@volar/vue-language-core` 為VSCode以外的IDE公開了 `vue-tsconfig.schema.json`
-- 實現了 `vue-component-meta` 用於UI Library文檔生成
+- `@volar/vue-language-core` 為 VSCode 以外的 IDE 公開了 `vue-tsconfig.schema.json`
+- 實現了 `vue-component-meta` 用於 UI Library 文檔生成
 
 ## What's Next
 
@@ -211,7 +211,7 @@ Volar 至今開發了兩年多時間，對於原本只是一個 VSCode Plugin �
 - 增量更新 template codegen
 - 探索 TypeScript 和 LSP 源代碼中的性能改進
 
-發佈v1.0之後我將會回到全職工作和開始一些其他個人項目，同時在業餘時間繼續做這些工作。
+發佈 v1.0 之後我將會回到全職工作和開始一些其他個人項目，同時在業餘時間繼續做這些工作。
 
 我想為從五月開始成為 Platinum Sponsor 的 [NuxtLabs](https://nuxtjs.org/) 以及所有贊助者大聲呼喊 🙌，這很大程度地保證了我在完成 1.0 之後仍然能夠繼續維護 Volar 以改善你的 Vue 開發體驗！
 
